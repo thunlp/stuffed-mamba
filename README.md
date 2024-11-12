@@ -32,10 +32,15 @@ Other required libraries are listed in `requirements.txt`.
 
 For running HGRN-2, you also need to install FlashLinearAttention from: https://github.com/sustcsonglin/flash-linear-attention.
 
-## Model Checkpoints
+## TODOs
 
-The checkpoints of Mamba-2 trained on longer sequences will be released soon.
+- The checkpoints of Mamba-2 trained on longer sequences will be released soon.
+- Code for the experiments with Mamba-1, HGRN-2.
 
 ## Acknowledgements
 
-A large part of the code for passkey retrieval evaluation is copied from <https://www.github.com/OpenBMB/InfiniteBench>.
+A large part of the code is copied from the following sources:
+
+- <https://www.github.com/OpenBMB/InfiniteBench>: For passkey evaluation.
+- <https://github.com/state-spaces/mamba>: For the Mamba-2 implementation.
+- The HuggingFace Transformers library: For RWKV implementation.
