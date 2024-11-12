@@ -34,6 +34,12 @@ Other required libraries are listed in `requirements.txt`.
 
 For running HGRN-2, you also need to install FlashLinearAttention from: https://github.com/sustcsonglin/flash-linear-attention.
 
+### Models & Data
+
+To perform the analysis experiments, you also need the model checkpoints, which are downloaded from their respective official repositories. For instance, for Mamba-2, download the official checkpoints from <https://huggingface.co/state-spaces>. Of course, you also need the respective tokenizers. Then, you need to specify the paths to the checkpoints and tokenizers through command-line arguments (see the README in the subdirectories for more details).
+
+For evaluating on synthetic data (such as passkey retrieval and the "newlines" prompt), you don't need to download any data. For training and evaluation on real data (such as RedPajama and SlimPajama), you need to download from the official sources, and specify the path through command-line arguments.
+
 ## TODOs
 
 - The checkpoints of Mamba-2 trained on longer sequences will be released soon.
