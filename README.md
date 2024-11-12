@@ -39,6 +39,7 @@ For running HGRN-2, you also need to install FlashLinearAttention from: https://
 - The checkpoints of Mamba-2 trained on longer sequences will be released soon.
 - Add code for the experiments with Mamba-1, HGRN-2.
 - Add code for training Mamba-2.
+- Add the implementation of the training-free SC mitigation methods.
 
 ## Acknowledgements
 
