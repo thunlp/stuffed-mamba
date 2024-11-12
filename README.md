@@ -17,8 +17,10 @@ Addressing the first concern, we first investigate state collapse (SC), a phenom
 
 ## Code Overview
 
-- The `analysis` directory contains the source code for the analysis experiments. It also contains the code for computing perplexity as a function of context length.
+- The `analysis` directory contains the source code for the analysis experiments (Section 4 in the paper). It also contains the code for computing perplexity as a function of context length.
 - The `passkey-retrieval` directory contains the source code for evaluating Mamba-2, RWKV-5, and RWKV-6 in passkey retrieval.
+
+For how to run the code to reproduce the results in the paper, checkout the README file inside the above directories.
 
 ## Setup
 
@@ -35,7 +37,8 @@ For running HGRN-2, you also need to install FlashLinearAttention from: https://
 ## TODOs
 
 - The checkpoints of Mamba-2 trained on longer sequences will be released soon.
-- Code for the experiments with Mamba-1, HGRN-2.
+- Add code for the experiments with Mamba-1, HGRN-2.
+- Add code for training Mamba-2.
 
 ## Acknowledgements
 
@@ -44,3 +47,17 @@ A large part of the code is copied from the following sources:
 - <https://www.github.com/OpenBMB/InfiniteBench>: For passkey evaluation.
 - <https://github.com/state-spaces/mamba>: For the Mamba-2 implementation.
 - The HuggingFace Transformers library: For RWKV implementation.
+
+## Citation
+
+To cite us, please use the following BibTeX.
+
+```bibtex
+@article{chen2024stuffed-mamba,
+    title={Stuffed Mamba: State Collapse and State Capacity of RNN-Based Long-Context Modeling},
+    author={Yingfa Chen and Xinrong Zhang and Shengding Hu and Xu Han and Zhiyuan Liu and Maosong Sun},
+    year={2024},
+    eprint={2410.07145},
+    url={https://arxiv.org/abs/2410.07145}, 
+}
+```
