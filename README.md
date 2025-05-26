@@ -1,6 +1,6 @@
-# Stuffed Mamba: State Collapse and State Capacity of RNN-Based Long-Context Modeling
+# Stuffed Mamba: Oversized States Lead to the Inability to Forget
 
-This is the official code for the paper [Stuffed Mamba: State Collapse and State Capacity of RNN-Based Long-Context Modeling](https://arxiv.org/abs/2410.07145). 
+This is the official code for the paper [Stuffed Mamba: Oversized States Lead to the Inability to Forget](https://arxiv.org/abs/2410.07145). 
 
 ## Introduction
 
