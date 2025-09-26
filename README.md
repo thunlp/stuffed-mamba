@@ -1,19 +1,34 @@
-# Stuffed Mamba: Oversized States Lead to the Inability to Forget
 
-This is the official code for the paper [Stuffed Mamba: Oversized States Lead to the Inability to Forget](https://arxiv.org/abs/2410.07145). 
+<div align="center"><img src="./readme-images/logo.png" width="140px"/> </div>
+<h1 align="center">Stuffed Mamba: Oversized States Lead to the Inability to Forget</h1>
+
+This is the official code for the COLM 2025 paper [Stuffed Mamba: Oversized States Lead to the Inability to Forget](https://arxiv.org/abs/2410.07145), by **Yingfa Chen\*, Yutong Wu\*, Chenyang Song, Zhen Leng Thai, Xingyu Shen, Xu Han, Zhiyuan Liu, Maosong Sun**.
+
+To contact the authors, please email to:  <span style="font-family: monospace;">chenyingfa1999@gmail.com, wuyutong_yuna@163.com</span>
 
 ## Introduction
 
-We examine two practical concerns when applying state-of-the-art RNNs to long contexts:
+RNNs/SSMs are much more efficient than Transformers in processing long contexts, but they fail to extrapolate beyond the training context length. Why? 🤔
 
-1. The inability to extrapolate to inputs longer than the training length.
-2. The upper bound of memory capacity.
+→ They do not know how to forget past information when the state is overloaded with memories.
 
-Addressing the first concern, we first investigate state collapse (SC), a phenomenon that causes severe performance degradation on sequence lengths not encountered during training. With controlled experiments, we attribute this to overfitting due to the recurrent state being overparameterized for the training length. For the second concern, we train a series of Mamba-2 models on long documents to empirically estimate the recurrent state capacity in language modeling and passkey retrieval.
+This is surprising since models such as Mamba (selective SSM) have a built-in forgetting mechanism (i.e., the forget gate). However, because their recurrent state is overparameterized (too large), these models can achieve good langauge modeling performance without learning how to forget past information.
 
-![](readme-images/fig1.png)
+![figure 1 and 2](readme-images/fig1and2.png)
 
-![](readme-images/fig12.png)
+Based on the above hypothesis and supporting experimental analyses, we arrived at the following finding:
+
+<p align="center" style="font-size: 16px;">
+    Finding:<br>
+</p>
+
+*Let $N_S$ and $T_\text{train}$ denote the recurrent state size and training length, respectively, there exists a threshold $T_\text{forget} (N_S)$ such that the model learns to forget if and only if $T_\text{train} > T_\text{forget}$.*
+
+<br>
+
+We call $T_\text{forget}$ the *forget threshold*, and find that it scales linearly with the state size:
+
+![fig10and11](readme-images/fig10and11.png)
 
 ## Code Overview
 
@@ -43,8 +58,6 @@ For evaluating on synthetic data (such as passkey retrieval and the "newlines" p
 ## TODOs
 
 - The checkpoints of Mamba-2 trained on longer sequences will be released soon.
-- Add code for the experiments with Mamba-1, HGRN-2.
-- Add code for training Mamba-2.
 - Add the implementation of the training-free SC mitigation methods.
 
 ## Acknowledgements
@@ -60,11 +73,11 @@ A large part of the code is copied from the following sources:
 To cite us, please use the following BibTeX.
 
 ```bibtex
-@article{chen2024stuffed-mamba,
-    title={Stuffed Mamba: State Collapse and State Capacity of RNN-Based Long-Context Modeling},
+@inproceedings{chen2024stuffed-mamba,
+    title={Stuffed Mamba: Oversized States Lead to the Inability to Forget},
     author={Yingfa Chen and Xinrong Zhang and Shengding Hu and Xu Han and Zhiyuan Liu and Maosong Sun},
-    year={2024},
-    eprint={2410.07145},
+    year={2025},
+    booktitle={Second Conference on Language Modeling},
     url={https://arxiv.org/abs/2410.07145}, 
 }
 ```

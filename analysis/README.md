@@ -10,8 +10,6 @@ For experiments using text from pretraining corpus, you have to first download t
 
 Finally, when running the experiments as described in the following section, you need to specify the data_path using `--data_path`.
 
-## Model Preparation
-
 ## Perplexity as a Function of Time
 
 Run:

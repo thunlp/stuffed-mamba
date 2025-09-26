@@ -20,6 +20,7 @@ class Args(Tap):
     ppl: int = 1
     fig_width: float = 3
     fig_height: float = 2.3
+    name: str = 'mamba2'
 
 
 name = "mamba2-130m-training-long"
@@ -96,39 +97,38 @@ train_lens = [
 #     '2.7B',
 # ]
 
-name = 'rwkv6'
-ckpt_paths = [
-    "../../ckpts/rwkv/rwkv6-world-1.6b",
-    "../../ckpts/rwkv/rwkv6-world-3b",
-]
-labels = [
-    '1.6B',
-    '3B',
-]
-
 # ckpt_paths = [
-#     '../../ckpts/mamba/mamba2-780m-dt_mult0.0-da_mult0.0',
-#     '../../ckpts/mamba/mamba2-780m-dt_mult0.2-da_mult0.0-b_mult0.0-a_mult0.0-hnorm0.0',
-#     '../../ckpts/mamba/mamba2-780m-dt_mult0.0-da_mult0.9999',
-#     # '../../ckpts/mamba/mamba2-780m-dt_mult0.2-da_mult0.99999',
-#     '../../ckpts/mamba/mamba2-780m-dt_mult0.0-da_mult0.99999-b_mult0.7-a_mult0.0-hnorm0.0',
-#     # '../../ckpts/mamba/mamba2-780m-dt_mult0.0-da_mult0.99999-b_mult0.6-a_mult0.0-hnorm0.0',
-#     '../../ckpts/mamba/mamba2-780m-dt_mult0.0-da_mult0.0-b_mult0.0-a_mult0.0-hnorm0.5'
+#     "../../ckpts/rwkv/rwkv6-world-1.6b",
+#     "../../ckpts/rwkv/rwkv6-world-3b",
 # ]
 # labels = [
-#     'Original',
-#     r"(LongMamba) $\Delta_t$: 0.2",
-#     r'Method 1: $B_t$: 0.0, $\alpha_t$: 0.9999',
-#     # r'Method 1: $\Delta_t$: 0.2, $\alpha_t$: 0.99999',
-#     r'Method 1: $B_t$: 0.7, $\alpha_t$: 0.99999',
-#     # r'Method 1: $B_t$: 0.6, $\alpha_t$: 0.99999',
-#     # r'Method 2: Norm 0.5',
-#     r'Method 2: State Normalization',
+#     '1.6B',
+#     '3B',
 # ]
+
+ckpt_paths = [
+    '../../ckpts/mamba/mamba2-780m-dt_mult0.0-da_mult0.0',
+    '../../ckpts/mamba/mamba2-780m-dt_mult0.2-da_mult0.0-b_mult0.0-a_mult0.0-hnorm0.0',
+    '../../ckpts/mamba/mamba2-780m-dt_mult0.0-da_mult0.9999',
+    # '../../ckpts/mamba/mamba2-780m-dt_mult0.2-da_mult0.99999',
+    '../../ckpts/mamba/mamba2-780m-dt_mult0.0-da_mult0.99999-b_mult0.7-a_mult0.0-hnorm0.0',
+    # '../../ckpts/mamba/mamba2-780m-dt_mult0.0-da_mult0.99999-b_mult0.6-a_mult0.0-hnorm0.0',
+    '../../ckpts/mamba/mamba2-780m-dt_mult0.0-da_mult0.0-b_mult0.0-a_mult0.0-hnorm0.5'
+]
+labels = [
+    'Original',
+    r"(LongMamba) $\Delta_t$: 0.2",
+    r'Method 1: $B_t$: 0.0, $\alpha_t$: 0.9999',
+    # r'Method 1: $\Delta_t$: 0.2, $\alpha_t$: 0.99999',
+    r'Method 1: $B_t$: 0.7, $\alpha_t$: 0.99999',
+    # r'Method 1: $B_t$: 0.6, $\alpha_t$: 0.99999',
+    # r'Method 2: Norm 0.5',
+    r'Method 2: State Normalization',
+]
 
 args = Args().parse_args()
 
-output_dir = Path('./figs/per_token_loss', name)
+output_dir = Path('./figs/per_token_loss', args.name)
 output_dir.mkdir(exist_ok=True, parents=True)
 
 # positions = list(range(len(per_bucket_loss)))
