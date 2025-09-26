@@ -18,11 +18,7 @@ This is surprising since models such as Mamba (selective SSM) have a built-in fo
 
 Based on the above hypothesis and supporting experimental analyses, we arrived at the following finding:
 
-<p align="center" style="font-size: 16px;">
-    Finding:<br>
-</p>
-
-*Let $N_S$ and $T_\text{train}$ denote the recurrent state size and training length, respectively, there exists a threshold $T_\text{forget} (N_S)$ such that the model learns to forget if and only if $T_\text{train} > T_\text{forget}$.*
+Let $N_S$ and $T_\text{train}$ denote the recurrent state size and training length, respectively, there exists a threshold $T_\text{forget} (N_S)$ such that the model learns to forget if and only if $T_\text{train} > T_\text{forget}$.
 
 <br>
 
