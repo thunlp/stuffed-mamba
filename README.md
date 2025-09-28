@@ -69,7 +69,7 @@ A large part of the code is copied from the following sources:
 To cite us, please use the following BibTeX.
 
 ```bibtex
-@inproceedings{chen2024stuffed-mamba,
+@inproceedings{chen2025stuffed-mamba,
     title={Stuffed Mamba: Oversized States Lead to the Inability to Forget},
     author={Yingfa Chen and Xinrong Zhang and Shengding Hu and Xu Han and Zhiyuan Liu and Maosong Sun},
     year={2025},
